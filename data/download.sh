@@ -1,11 +1,20 @@
-# Mount Google Drive
-from google.colab import drive
-drive.mount('/content/drive')
+#!/bin/bash
 
-# Paths
-import os
-ROOT_DIR = "/content/drive/MyDrive/soil-classification-part-2/soil_competition-2025"
-TRAIN_DIR = os.path.join(ROOT_DIR, "train")
-TEST_DIR = os.path.join(ROOT_DIR, "test")
-TRAIN_CSV = os.path.join(ROOT_DIR, "train_labels.csv")
-TEST_CSV = os.path.join(ROOT_DIR, "test_ids.csv")
+# Google Drive folder ID
+FOLDER_ID="1juuj0X3O5aEqxF4xaHHV7DhNWy0bo3pl"
+TARGET_DIR="./data"
+
+echo "📁 Downloading folder from Google Drive (ID: $FOLDER_ID)"
+mkdir -p "$TARGET_DIR"
+
+# Check for gdown
+if ! command -v gdown &> /dev/null
+then
+    echo "❌ 'gdown' not found. Install it via: pip install gdown"
+    exit 1
+fi
+
+# Download the folder
+gdown --folder "$FOLDER_ID" -O "$TARGET_DIR"
+
+echo "✅ Download complete. Files saved to: $TARGET_DIR"
