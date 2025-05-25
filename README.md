@@ -24,8 +24,8 @@ This project implements a deep learning model to classify images into soil types
 
 1. Clone this repository:
     ```bash
-    git clone https://github.com/yourusername/soil-vs-no-soil.git
-    cd soil-vs-no-soil
+    git clone https://github.com/23f3001369/Soil-Classification-Challenge--2-Annam.ai
+    cd Soil-Classification-Challenge--2-Annam.ai
     ```
 
 2. Create and activate a Python environment (optional but recommended):
@@ -44,7 +44,4 @@ This project implements a deep learning model to classify images into soil types
 
 ### Training
 
-Train the model on your dataset by running:
-
-```bash
-python train.py --config config.yaml
+Train the model on your dataset by running preprocessing.py and postprocessing.py (present in src folder).
