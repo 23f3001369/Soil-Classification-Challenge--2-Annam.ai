@@ -1,3 +1,10 @@
+"""
+Author: Annam.ai IIT Ropar
+Team Members: Aman Sagar
+Leaderboard Rank: 16
+
+"""
+
 def train(model, loader, criterion, optimizer, device):
     model.train()
     running_loss, correct = 0.0, 0
